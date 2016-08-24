@@ -11,7 +11,7 @@ import br.com.caelum.agiletickets.models.Espetaculo;
 import br.com.caelum.agiletickets.models.Sessao;
 
 public class JPAEspetaculoDao implements Agenda {
-
+	
 	private EntityManager manager;
 	private Relogio relogio;
 	

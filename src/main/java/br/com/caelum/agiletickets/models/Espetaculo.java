@@ -2,6 +2,9 @@ package br.com.caelum.agiletickets.models;
 
 import static com.google.common.collect.Lists.newArrayList;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -15,6 +18,10 @@ import javax.persistence.OneToMany;
 
 import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;
+
+import com.thoughtworks.xstream.io.json.JsonWriter.Format;
+
+import br.com.caelum.agiletickets.persistencia.JPAEspetaculoDao;
 
 @Entity
 public class Espetaculo {
@@ -90,7 +97,7 @@ public class Espetaculo {
      * e a periodicidade seja DIARIA, o algoritmo cria 3 sessoes, uma 
      * para cada dia: 01/01, 02/01 e 03/01.
      * 
-     * - Caso a data de inicio seja 01/01/2010, a data fim seja 31/01/2010,
+     * - Caso a data de inicio seja 01/01/2010, a data fim seja 31/01/2010,dc
      * e a periodicidade seja SEMANAL, o algoritmo cria 5 sessoes, uma
      * a cada 7 dias: 01/01, 08/01, 15/01, 22/01 e 29/01.
      * 
@@ -98,7 +105,18 @@ public class Espetaculo {
      */
 	public List<Sessao> criaSessoes(LocalDate inicio, LocalDate fim, LocalTime horario, Periodicidade periodicidade) {
 		// ALUNO: Não apague esse metodo. Esse sim será usado no futuro! ;)
-		return null;
+		
+	
+		Sessao sessao = new Sessao();
+		sessao.setInicio(inicio.toDateTime(horario));
+		
+		List<Sessao> sessoes = new ArrayList<Sessao>();
+		sessoes.add(sessao);
+		
+	//	JPAEspetaculoDao dao = new  JPAEspetaculoDao(manager, relogio);
+	//	dao.agende(sessoes);
+		
+		return sessoes;
 	}
 	
 	public boolean Vagas(int qtd, int min)
