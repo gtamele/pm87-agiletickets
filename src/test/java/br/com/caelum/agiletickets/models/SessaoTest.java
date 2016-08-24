@@ -44,5 +44,12 @@ public class SessaoTest {
 		sessao.setTotalIngressos(2);
 		Assert.assertTrue(sessao.podeReservar(2));
 	}
+	
+	@Test
+	public void deveSessoes(){
+		
+		Assert.assertEquals(1, 2);
+		
+	}
 
 }

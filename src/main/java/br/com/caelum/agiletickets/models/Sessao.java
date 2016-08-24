@@ -18,8 +18,8 @@ public class Sessao {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id; sssssssssss
-
+	private Long id;
+	
 	@ManyToOne
 	private Espetaculo espetaculo;
 
