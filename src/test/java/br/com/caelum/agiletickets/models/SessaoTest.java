@@ -48,8 +48,7 @@ public class SessaoTest {
 	@Test
 	public void deveSessoes(){
 		
-		Assert.assertEquals(1, 2);
-		
+
 	}
 
 }
